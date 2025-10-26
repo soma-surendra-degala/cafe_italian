@@ -1,0 +1,211 @@
+.specials-section {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.special-img{
+  width: 391px;
+  height: 391px;
+}
+
+.fs {
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+.specials-title {
+  font-size: 90px;
+  font-weight: 700;
+  font-style: italic;
+  margin-bottom: 60px;
+}
+
+.specials-title span {
+  color: #b38d4b;
+}
+
+/* Flex container for Swiper and side images */
+.specials-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 50px;
+  gap: 20px;
+}
+
+.side-img {
+  opacity: 0.2;
+  max-width: 280px;
+}
+
+.specials-swiper {
+  max-width: 400px;
+  z-index: 1;
+  position: relative;
+}
+
+/* Price tag styling */
+.price-tag {
+  position: absolute;
+  top: 0px;
+  right: 20px;
+  background: #b38d4b;
+  color: #000;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 30px 30px;
+  border-radius: 50%;
+  z-index: 10;
+  transform: scale(1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.swiper-slide-active .price-tag {
+  transform: scale(1.2);
+  box-shadow: 0 0 20px #b38d4b;
+}
+
+/* Card styling */
+.special-card {
+  background: radial-gradient(circle at top, #111 10%, #000 100%);
+  border-radius: 500px 500px 0 0;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.special-card img {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.special-name {
+  font-size: 31px;
+  font-weight: 600;
+  color: #f8f8f8;
+  margin-top: 15px;
+}
+
+/* Navigation buttons */
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.nav-buttons button {
+  width: 45px;
+  height: 45px;
+  border: 2px solid #b38d4b;
+  border-radius: 50%;
+  background: transparent;
+  color: #b38d4b;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-buttons button:hover {
+  background: #b38d4b;
+  color: #000;
+  transform: scale(1.1);
+}
+
+/* 🌐 RESPONSIVE DESIGN */
+
+/* Tablets (<=1024px) */
+@media (max-width: 1024px) {
+  .specials-title {
+    font-size: 65px;
+  }
+
+  .side-img {
+    max-width: 220px;
+  }
+
+  .specials-swiper {
+    max-width: 350px;
+  }
+
+  .special-card img {
+    max-width: 300px;
+  }
+}
+
+/* Mobiles (<=768px) */
+@media (max-width: 768px) {
+  .specials-section {
+    padding: 60px 10px;
+  }
+
+  .specials-title {
+    font-size: 45px;
+    line-height: 1.2;
+  }
+
+  .specials-wrapper {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .side-img {
+    display: none;
+  }
+
+  .specials-swiper {
+    max-width: 300px;
+  }
+
+  .special-card img {
+    max-width: 250px;
+  }
+
+  .special-name {
+    font-size: 22px;
+  }
+
+  .price-tag {
+    top: 5px;
+    right: 10px;
+    font-size: 14px;
+    padding: 20px 20px;
+  }
+
+  .nav-buttons button {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+}
+
+/* Extra small screens (<=480px) */
+@media (max-width: 480px) {
+  .specials-title {
+    font-size: 35px;
+  }
+
+  .specials-swiper {
+    max-width: 260px;
+  }
+
+  .special-card img {
+    width: 200px;
+    height: 300px;
+    max-width: 400px;
+
+  }
+
+  .special-name {
+    font-size: 18px;
+  }
+
+  .price-tag {
+    padding: 15px;
+  }
+ 
+}

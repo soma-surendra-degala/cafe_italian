@@ -16,9 +16,8 @@
   z-index: 0;
 }
 
-/* Dark overlay for contrast */
-.hero-container::after {
-  content: "";
+/* Dark overlay */
+.overlay-dark {
   position: absolute;
   top: 0;
   left: 0;
@@ -28,38 +27,28 @@
   z-index: 1;
 }
 
+nav{
+  gap: 12px;
+}
 /* Overlay content */
-.overlay {
-  position: relative;
-  z-index: 2;
+.overlay-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
+  z-index: 2;
+  color: white;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  color: white;
+  padding: 0 50px;
 }
 
-/* Center hero text */
-.hero-text {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-}
-
-.hero-text .big {
-  font-size: 3.5rem;
-  font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: 1px;
-}
-
-/* Navbar styles */
+/* Navbar */
 .nav-links p {
   margin: 0;
-  font-size: 18px;
+  font-size: 1.2rem; /* dynamic font */
   font-weight: 500;
   cursor: pointer;
   transition: color 0.3s ease;
@@ -69,12 +58,18 @@
   color: #f5b642;
 }
 
-/* Custom Button */
-.btn1 {
+.cafe-logo {
+  width: 10vw; /* dynamic width */
+  max-width: 150px;
+  height: auto;
+}
+
+/* Buttons */
+.herobtn {
   background: #f5b642;
   color: #000;
   border: none;
-  padding: 10px 20px;
+  padding: 10px 30px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -83,26 +78,105 @@
   gap: 6px;
 }
 
-.btn1:hover {
+.herobtn:hover {
   background: #000;
   color: #f5b642;
   border: 1px solid #f5b642;
 }
 
-/* Bottom dish image */
-.dish-img {
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
-  margin-bottom: 1.5rem;
+/* Center hero text */
+.hero-text-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
 }
 
-/* Small black background only behind the dish */
+.big {
+  font-size: 8vw; /* dynamic font size */
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.1;
+}
+
+/* Bottom dish image */
+.dish-img {
+  position: absolute;
+  bottom: 4%;
+  right: 4%;
+}
+
 .dish-bg {
   background-color: #000;
-  padding: 15px 25px;
+  padding: 1em;
   border-radius: 50%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+}
+
+.dish-bg img {
+  width: 50px; /* dynamic size */
+  max-width: 50px;
+  height: auto;
+
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .big {
+    font-size: 10vw;
+  }
+
+  .dish-bg {
+    padding: 0.8em;
+  }
+}
+
+@media (max-width: 768px) {
+  .big {
+    font-size: 12vw;
+  }
+
+  .nav-links p {
+    font-size: 1rem;
+  }
+
+  .cafe-logo {
+    padding-right: 2px;
+    width: 25vw;
+    max-width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  nav{
+    padding: 2px;
+    gap: 3px;
+  }
+  .nav-links p{
+    font-size: 0.5px;
+  }
+  .overlay-content{
+    padding: 0 5px;
+  }
+  .big {
+    font-size: 14vw;
+  }
+
+  .herobtn {
+    padding: 5px 6px;
+    font-size: 10px;
+  }
+
+  .dish-img {
+    bottom: 3%;
+    right: 3%;
+  }
+
+  .dish-bg {
+    padding: 10px;
+  }
 }
